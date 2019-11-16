@@ -1,0 +1,445 @@
+#include "QLNhanVien.h"
+#include<iostream>
+using namespace std;
+
+QLNhanVien::QLNhanVien()
+{
+}
+void QLNhanVien::New()
+{
+	l.Head = l.Tail = NULL;
+}
+
+void QLNhanVien::Addtail()
+{
+	if (l.Head == NULL)
+	{
+		a->Next = NULL;
+		l.Head = l.Tail = a;
+
+	}
+	else
+	{
+		l.Tail->Next = a;
+		l.Tail = a;
+		l.Tail->Next = NULL;
+	}
+	a = NULL;
+}
+void QLNhanVien::Nhap()
+{
+	New();
+	int n, m;
+	do
+	{
+		cout << "__________________ Nhap nhan vien________________" << endl;
+		cout << "Nhap so luong nhan vien : "; cin >> n;
+		if (n <= 0)
+		{
+			cout << " So luong ko am , vui long nhap lai." << endl;
+		}
+	} while (n <= 0);
+	for (int i = 1; i <= n; i++)
+	{
+		a = new node;
+		cout << "------- Nhap thong tin nhan vien thu : " << i << " -------" << endl;
+		if (i == 1)
+		{
+			cin.ignore();
+			a->nv.Nhap();
+			int n;
+			do
+			{
+				n = 0;
+				cout << "Nhap ma nhan vien : "; getline(cin, a->nv.MaNV);
+				for (size_t j = 0; j <a->nv.MaNV.length(); j++)
+				{
+					if (a->nv.MaNV.at(j) < 49 || a->nv.MaNV.at(j) > 57)
+					{
+						n++;
+					}
+				}
+				if (n != 0)
+				{
+					cout << "  Ma nhan vien la so, vui long nhap lai." << endl;
+				}
+			} while (n != 0);
+		}
+		if (i > 1)
+		{
+			a->nv.Nhap();
+			do
+			{
+				m = 1;
+				int n;
+				do
+				{
+					n = 0;
+					cout << "Nhap ma nhan vien : "; getline(cin, a->nv.MaNV);
+					for (size_t j = 0; j <a->nv.MaNV.length(); j++)
+					{
+						if (a->nv.MaNV.at(j) < 49 || a->nv.MaNV.at(j) > 57)
+						{
+							n++;
+						}
+					}
+					if (n != 0)
+					{
+						cout << " Ma nhan vien la so, vui long nhap lai." << endl;
+					}
+				} while (n != 0);
+				for (node *i = l.Head; i != NULL; i = i->Next)
+				{
+					if (a->nv.MaNV == i->nv.MaNV)
+					{
+						m = 0;
+					}
+				}
+				if (m == 0)
+				{
+					cout << "  Ma nhan vien bi trung, vui long nhap lai." << endl;
+				}
+			} while (m == 0);
+		}
+		Addtail();
+	}
+}
+void QLNhanVien::XuatNV()
+{
+
+	node *k = l.Head;
+	if (k == NULL)
+	{
+		cout << " Empty." << endl;
+	}
+	else
+	{
+		node *p = l.Head;
+		do
+		{
+			p->nv.Xuat();
+			p = p->Next;
+		} while (p != NULL);
+	}
+}
+void QLNhanVien::Add()
+{
+	int m;
+	cout << "______________ Them nhan vien_____________" << endl;
+	a = new node;
+	cin.ignore();
+	a->nv.Nhap();
+	do
+	{
+		m = 1;
+		int n;
+		do
+		{
+			n = 0;
+			cout << "Nhap ma nhan vien : "; getline(cin, a->nv.MaNV);
+			for (size_t i = 0; i <a->nv.MaNV.length(); i++)
+			{
+				if (a->nv.MaNV.at(i) < 49 || a->nv.MaNV.at(i) > 57)
+				{
+					n++;
+				}
+			}
+			if (n != 0)
+			{
+				cout << " Ma nhan vien la so, vui long nhap lai." << endl;
+			}
+		} while (n != 0);
+		for (node *i = l.Head; i != NULL; i = i->Next)
+		{
+			if (a->nv.MaNV == i->nv.MaNV)
+			{
+				m = 0;
+			}
+		}
+		if (m == 0)
+		{
+			cout << " Ma nhan vien bi trung, vui long nhap lai." << endl;
+		}
+	} while (m == 0);
+	Addtail();
+}
+void QLNhanVien::sxnv()
+{
+	node*n = new node;
+	for (node *p = l.Head; p != l.Tail; p = p->Next)
+	{
+		for (node *i = p->Next; i != NULL; i = i->Next)
+		{
+			if (p->nv.TenNV.at(0) > i->nv.TenNV.at(0))
+			{
+				n->nv.TenNV = i->nv.TenNV;
+				n->nv.HoNV = i->nv.HoNV;
+				n->nv.MaNV = i->nv.MaNV;
+				n->nv.Chucvu = i->nv.Chucvu;
+				n->nv.LuongCB = i->nv.LuongCB;
+
+				i->nv.TenNV = p->nv.TenNV;
+				i->nv.HoNV = p->nv.HoNV;
+				i->nv.MaNV = p->nv.MaNV;
+				i->nv.Chucvu = p->nv.Chucvu;
+				i->nv.LuongCB = p->nv.LuongCB;
+
+				p->nv.TenNV = n->nv.TenNV;
+				p->nv.HoNV = n->nv.HoNV;
+				p->nv.MaNV = n->nv.MaNV;
+				p->nv.Chucvu = n->nv.Chucvu;
+				p->nv.LuongCB = n->nv.LuongCB;
+			}
+			else
+			{
+
+			}
+		}
+	}
+}
+void QLNhanVien::snv()
+{
+
+	if (l.Head == NULL)
+	{
+		return;
+	}
+	else
+	{
+		string s;
+		int k = 0, m = 0, luachon, n;
+		cout << "______________sua nhan vien_____________" << endl;
+		int f;
+		do
+		{
+			f = 0;
+			cout << "Nhap ma nhan vien : "; getline(cin, s);
+			getline(cin, s);
+			for (size_t i = 0; i <s.length(); i++)
+			{
+				if (s.at(i) < 49 || s.at(i) > 57)
+				{
+					f++;
+				}
+			}
+			if (f != 0)
+			{
+				cout << " Ma nhan vien la so, vui long nhap lai." << endl;
+			}
+		} while (f != 0);
+		for (node *p = l.Head; p != NULL; p = p->Next)
+		{
+			if (p->nv.MaNV == s)
+			{
+				cout << "Thong tin nhan vien can sua. " << endl;
+				p->nv.Xuat();
+				k++;
+				do
+				{
+					cout << "------ Lua chon thong tin -----" << endl;
+					cout << "0: Thoat . " << endl;
+					cout << "1: Sua ten nhan vien. " << endl;
+					cout << "2: Sua ho nhan vien. " << endl;
+					cout << "3: Sua chuc vu nhan vien. " << endl;
+					cout << "nhap : "; cin >> luachon;
+					switch (luachon)
+					{
+					case 1:
+					{
+						int n;
+						do
+						{
+							n = 0;
+							cout << "Nhap ten nhan vien : "; getline(cin, p->nv.TenNV);
+							getline(cin, p->nv.TenNV);
+							for (size_t i = 0; i <p->nv.TenNV.length(); i++)
+							{
+								if ((p->nv.TenNV.at(i) > 32 && p->nv.TenNV.at(i) < 65) || (p->nv.TenNV.at(i) > 90 && p->nv.TenNV.at(i)<97) || (p->nv.TenNV.at(i) > 122 && p->nv.TenNV.at(i) <= 127))
+								{
+									n++;
+								}
+							}
+							if (n != 0)
+							{
+								cout << " Ten nhan vien la Chu, vui long nhap lai." << endl;
+							}
+						} while (n != 0);
+						break;
+					}
+					case 2:
+					{
+						int n;
+						do
+						{
+							n = 0;
+							cout << "Nhap ho nhan vien : "; getline(cin, p->nv.HoNV);
+							getline(cin, p->nv.HoNV);
+							for (size_t i = 0; i <p->nv.HoNV.length(); i++)
+							{
+								if ((p->nv.HoNV.at(i) > 32 && p->nv.HoNV.at(i) < 65) || (p->nv.HoNV.at(i) > 90 && p->nv.HoNV.at(i)<97) || (p->nv.HoNV.at(i) > 122 && p->nv.HoNV.at(i) <= 127))
+								{
+									n++;
+								}
+							}
+							if (n != 0)
+							{
+								cout << " Ho nhan vien la chu, vui long nhap lai." << endl;
+							}
+						} while (n != 0);
+						break;
+					}
+					case 3:
+					{
+						int n;
+						do
+						{
+							n = 0;
+							cout << "Nhap chuc vu : "; getline(cin, p->nv.Chucvu);
+							getline(cin, p->nv.Chucvu);
+							if (p->nv.Chucvu == "LTV" || p->nv.Chucvu == "TDA" || p->nv.Chucvu == "NQL")
+							{
+								n++;
+							}
+							if (n == 0)
+							{
+								cout << "  (chuc vu gom cac ki hieu sau :LTV, NQL, TDA vui long nhap lai" << endl;
+							}
+						} while (n == 0);
+						break;
+					}
+					case 0:
+					{
+						m++;
+						break;
+					}
+					default:
+						break;
+					}
+
+				} while (m == 0);
+			}
+
+		}
+		if (k == 0)
+		{
+			cout << " EmpTy!! " << endl;
+		}
+	}
+
+}
+void QLNhanVien::tknv()
+{
+	if (l.Head == NULL)
+	{
+		cout << " EmpTy!!" << endl;
+	}
+	else
+	{
+		string s;
+		int k = 0, luachon, n;
+		cout << "______________Tim kiem nhan vien_____________" << endl;
+		int f;
+		do
+		{
+			f = 0;
+			cout << "Nhap ma nhan vien : "; getline(cin, s);
+			getline(cin, s);
+			for (size_t i = 0; i <s.length(); i++)
+			{
+				if (s.at(i) < 49 || s.at(i) > 57)
+				{
+					f++;
+				}
+			}
+			if (f != 0)
+			{
+				cout << " Ma Nhan Vien la So Nguyen, Vui Long Nhap Lai." << endl;
+			}
+		} while (f != 0);
+		for (node *p = l.Head; p != NULL; p = p->Next)
+		{
+			if (p->nv.MaNV == s)
+			{
+				cout << "____________ Thong tin nhan vien tim kiem ___________" << endl;
+				p->nv.Xuat();
+				k++;
+			}
+		}
+		if (k == 0)
+		{
+			cout << " Khong co ten nhan vien trong danh sach." << endl;
+		}
+	}
+}
+void QLNhanVien::xnvtk()
+{
+	string s;
+	int f, n = 0;
+	cout << "______________ Xoa nhan vien_____________" << endl;
+	if (l.Head == NULL)
+	{
+		return;
+	}
+	else
+	{
+		do
+		{
+			f = 0;
+			cout << "Nhap Ma So Nhan Vien : "; getline(cin, s);
+			getline(cin, s);
+			for (size_t i = 0; i <s.length(); i++)
+			{
+				if (s.at(i) < 49 || s.at(i) > 57)
+				{
+					f++;
+				}
+			}
+			if (f != 0)
+			{
+				cout << " Ma So nhan vien la so, vui long nhap lai." << endl;
+			}
+		} while (f != 0);
+		for (node *j = l.Head; j != NULL; j = j->Next)
+		{
+			if (s == l.Head->nv.MaNV)
+			{
+				n++;
+				node *temp = l.Head;
+				l.Head = temp->Next;
+				delete temp;
+				break;
+			}
+			if (j != l.Head || j != l.Tail)
+			{
+				n++;
+				node*c = l.Head;
+				if (s == j->nv.MaNV)
+				{
+					for (node *k = l.Head; k != NULL; k = k->Next)
+					{
+						if (k->Next == j)
+						{
+
+							k->Next = j->Next;
+						}
+					}
+				}
+			}
+			if (j->Next == l.Tail&&s == l.Tail->nv.MaNV)
+			{
+				n++;
+				l.Tail = j;
+				l.Tail->Next = NULL;
+			}
+		}
+		if (n == 0)
+		{
+			cout << " Ma so Nhan Vien Khong Ton Tai." << endl;
+		}
+	}
+}
+
+
+QLNhanVien::~QLNhanVien()
+{
+}
