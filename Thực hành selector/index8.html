@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul li a{
+            color: orange;
+        }
+
+        nav > ul > li > a {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Selector con trực tiếp</h1>
+
+    <pre>
+    *Cú pháp :
+        selector1 selector2 => selector2 sẽ nằm trong selector1
+        selector1 > selector2 => selector2 phải là con trực tiếp của selector1
+        Yêu cầu đề bài :
+            Không được sửa code html bên dưới hay đổi màu tỉnh/ thành phố
+            có màu đỏ và các quận/huyện thuộc tỉnh/thành phố có màu da cam
+
+            Gợi ý:
+                link tham khảo: http://www.w3schools.com/css_selectors.asp
+    </pre>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Hà nội</a>
+                <ul>
+                    <li><a href="#">Quận Hoàn kiếm</a></li>
+                    <li><a href="#">Quận Thanh Xuân</a></li>
+                    <li><a href="#">Quận Long Biên</a></li>
+                    <li><a href="#">Quận Cầu Giấy</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Quảng Ninh</a></li>
+            <li><a href="#">Hải phòng</a></li>
+            <li><a href="#">Nam Định</a></li>
+            <li><a href="#">Ninh Bình</a></li>
+            <li>
+                <a href="#">Đà nẵng</a>
+                <ul>
+                    <li><a href="#">Quận liên chiều</a></li>
+                    <li><a href="#">Quận ngũ hành sơn</a></li>
+                    <li><a href="#">Quận Tam khê</a></li>
+                    <li><a href="#">Quận hải châu</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Hồ chí minh</a>
+                <ul>
+                    <li><a href="#">Quận thủ đức</a></li>
+                    <li><a href="#">Quận 1</a></li>
+                    <li><a href="#">Quận 2</a></li>
+                    <li><a href="#">Quận 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

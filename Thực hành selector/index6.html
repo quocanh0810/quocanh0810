@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+    #idA #idB{
+        color: red;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Selector id lồng</h1>
+    <pre>
+        Cú pháp : #idA #idB ( thẻ idB phải nằm trong thẻ idA mới bị ảnh hưởng )
+    </pre>
+
+    <pre>
+        Thay thế chuỗi trong phpstorm : CTRL + R
+    </pre>
+    <div id="idA">
+        <p id="idB">thẻ 1</p>
+        <p id="idC">thẻ 4</p>
+        <p id="iđ">thẻ 5</p>
+    </div>
+
+<p id="idE">thẻ 6</p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        p{
+            color: red;
+        }
+
+        div p{
+            background-color: greenyellow;
+        }
+         section p {
+             color: orange;
+         }
+    </style>
+</head>
+<body>
+    <h1>Selector thẻ lồng thẻ</h1>
+    <pre>
+        html_tag1_html_tag2 : css chọn những thẻ html_tag2 phải nằm trong thẻ html_tag1 mnới bị ảnh hưởng bởi các thuộc tính css
+        ví dụ 1 : div p
+        ví dụ 2 : div img
+        ví dụ 3 : div a
+
+        * CSS sẽ chạy từ trên xuống dưới
+    </pre>
+
+<div>
+    <p>Thẻ 1</p>
+    <p>Thẻ 2</p>
+    <p>Thẻ 3</p>
+</div>
+
+<p>Thẻ 4</p>
+<p>Thẻ 5</p>
+
+<section>
+    <p>Thẻ 6</p>
+    <p>Thẻ 7</p>
+</section>
+</body>
+</html>
