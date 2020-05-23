@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="alo">
+    <div class="site-wrapper">
+        <div class="header">
+            <div class="menu-left">
+            <ul class="logo">
+                <li class="logo1"><a href="">LOGO AREA</a></li>
+                    <ul class="main-menu-logo">
+                        <li><a href="#">Du lịch Hạ Long</a></li>
+                        <li><a href="#">Du lịch Sapa</a></li>
+                        <li><a href="#">Du lịch Đà Lạt</a></li>
+                    </ul>
+            </ul>
+            </div>
+
+            <div class="menu-right">
+                <div class="banner">BANNER AREA</div>
+                <div class="color-main-menu">
+                        <ul class="main-menu">
+                            <li><a href="">Trang chủ</a></li>
+                            <li><a href="">Đăng ký</a></li>
+                            <li><a href="">Hướng dẫn</a></li>
+                            <li><a href="">Giới thiệu</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div><h2 style="text-align: center;">Đăng ký tour du lịch</h2></div>
+    <form name="dangkytourdulich" action="" method="post">
+        <table>
+            <tr>
+                <td>Họ tên (*)</td>
+                <td><input type="text" name="hoten" id="hoten"><span id="loi-hoten" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Năm sinh (*)</td>
+                <td><input type="number" name="namsinh" id="namsinh"><span id="loi-namsinh" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Giới tính (*)</td>
+                <td><fieldset><input type="radio" name="radiofield" value="">Nam
+                    <input type="radio" name="radiofield" value="">Nữ</fieldset><span id="loi-gioitinh" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Địa chỉ (*)</td>
+                <td><input type="text" name="diachi" id="diachi" value=""><span id="loi-diachi" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Điện thoại (*)</td>
+                <td><input type="text" name="dienthoai" value=""><span id="loi-dienthoai" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Email (*)</td>
+                <td><input type="text" name="email" id="email" value=""><span id="loi-email" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Chọn tour (*)</td>
+                <td><input type="checkbox" name="tour" value=""> Hạ Long
+                    <input type="checkbox" name="tour" value=""> Sapa
+                    <input type="checkbox" name="tour" value=""> Đà Lạt<span id="loi-tour" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Phương tiện</td>
+                <td><select name="phuongtien">
+                    <option value="0">Chọn phương tiện</option>
+                    <option value="1">Ôtô</option>
+                    <option value="2">Tàu hỏa</option>
+                    <option value="3">Máy bay</option>
+                </select><span id="loi-phuongtien" class="loi"></span></td>
+            </tr>
+            <tr>
+                <td>Thông tin khác</td>
+                <td><textarea name="thongtinkhac" cols="70" rows="6"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" name="button" value="Đăng ký" onclick="kiemtraform(); return false;"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script type="text/javascript">
+   function kiemtraform() {
+       var flag = true;
+       var form = document.forms["dangkytourdulich"];
+       var hoten = form["hoten"].value;
+       // kiểm tra họ tên
+       if (hoten == "") {
+           document.getElementById("loi-hoten").innerHTML = "Vui lòng nhập họ tên";
+           form["hoten"].classList.add("invalid");
+       } else {
+           document.getElementById("loi-hoten").innerHTML = "";
+           form["hoten"].classList.remove("invalid");
+       }
+
+       // kiem tra checkbox
+       if(form.tour.checked) {
+           document.getElementById("loi-tour").innerHTML = "";
+       } else {
+           document.getElementById("loi-tour").innerHTML = "Vui lòng chon tour";
+       }
+
+
+       //kt gioi tinh
+       function checkRadio(field)
+       {
+           for(var i=0; i < field.length; i++) {
+               if(field[i].checked) return field[i].value;
+           }
+           return false;
+       }
+
+       if(radioValue  = checkRadio(form.radiofield)) {
+           alert("You selected " + radioValue);
+           return true;
+       } else {
+           alert("Error: No value was selected!");
+           return false;
+       }
+
+
+       //kiểm tra năm sinh
+       var namsinh = form["namsinh"].value;
+       if (!KiemTraNamSinh(namsinh)) {
+           document.getElementById("loi-namsinh").innerHTML = "Năm sinh không hợp lệ";
+           form["namsinh"].classList.add("invalid");
+       } else {
+           document.getElementById("loi-namsinh").innerHTML = "";
+           form["namsinh"].classList.remove("invalid");
+       }
+
+       //kiểm tra email
+       var email = form["email"].value;
+       if (!KiemTraEmail1(email) || email == "") {
+           document.getElementById("loi-email").innerHTML = "Email không hợp lệ";
+           form["email"].classList.add("invalid");
+       } else {
+           document.getElementById("loi-email").innerHTML = "";
+           form["email"].classList.remove("invalid");
+       }
+
+       // kiểm tra phương tiện
+       var phuongtien = form["phuongtien"];
+       if (phuongtien.selectedIndex == 0) {
+           document.getElementById("loi-phuongtien").innerHTML = "Vui lòng chọn phương tiện";
+           form["phuongtien"].classList.add("invalid");
+       } else {
+           document.getElementById("loi-phuongtien").innerHTML = "";
+           form["phuongtien"].classList.remove("invalid");
+       }
+       return flag;
+   }
+    //hàm kiểm tra năm sinh
+    function KiemTraNamSinh(namsinh) {
+        if (namsinh == ""){
+            return false;
+        }
+        else {
+            if(isNaN(namsinh)){
+                return false;
+            }else {
+                var namsinh = parseInt(namsinh);
+                var currentdate = new Date();
+                var currentyear = currentdate.getFullYear();
+
+                if(namsinh <= 0 || namsinh > currentyear){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    //hàm kiểm tra email
+    function KiemTraEmail(email) {
+        var atpos = email.indexOf("@"); //trả về chỉ mục @ trong chuỗi
+        var atpos1 = email.lastIndexOf("@"); //trả về chỉ mục @ cuối cùng trong chuỗi
+        var dotpos = email.lastIndexOf(".");
+        if(atpos > 0 && atpos == atpos1 && (dotpos - atpos >= 1) && ((email.length - 1) - dotpos ) >= 2 ){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    //hàm kiểm tra email sd biểu thức chính quy
+    function KiemTraEmail1(email) {
+        var x = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return x.test(email)
+    }
+
+</script>
+
+</body>
+</html>

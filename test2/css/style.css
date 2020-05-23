@@ -1,0 +1,108 @@
+div.site-wrapper{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div.menu-left{
+    width: 20%;
+    float:left;
+}
+
+div.menu-right{
+    width: 80%;
+    float:right;
+
+}
+/*style logo left*/
+div.site-wrapper div.menu-left li.logo1{
+    padding: 40px 0;
+    border: 1px solid black;
+    background-color: red;
+    list-style: none;
+}
+
+div.menu-left ul.logo{
+    padding-left: 0;
+}
+
+div.menu-left ul.main-menu-logo{
+    padding-left: 10px;
+}
+
+
+div.menu-left ul.main-menu-logo li{
+    border: 1px solid black;
+    list-style: none;
+    display: none;
+}
+
+div.site-wrapper div.menu-left ul.logo:hover ul.main-menu-logo li{
+    display:block;
+    background: greenyellow;
+}
+
+/*end style logo left*/
+
+/*style logo right*/
+
+div.menu-right div.banner{
+    text-align: center;
+    background-color: aqua;
+    border: 1px solid black;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+div.menu-right div.color-main-menu{
+    background-color: darkgrey;
+    border: 1px solid black;
+    padding:8px;
+}
+
+div.menu-right div.color-main-menu ul.main-menu{
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 5px;
+}
+
+div.menu-right div.color-main-menu ul.main-menu li{
+    float: left;
+    padding-right:190px;
+}
+
+div.menu-right div.color-main-menu ul.main-menu li a{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/*end style logo right*/
+
+/*style form*/
+form .loi {
+    color: red;
+}
+
+.invalid {
+    background-color: yellow;
+    border: 1px solid red;
+}
+
+div h2{
+    color: #090;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+form{
+    padding-left: 450px;
+    margin-top: 30px;
+}
+
+
+div.alo{
+    border: 1px solid black;
+}
+
+
