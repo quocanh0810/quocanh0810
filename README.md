@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/meo.gif" alt="Anime Banner" width="500px" height="285" />
+  <img src="assets/codeguy.gif" alt="Anime Banner" width="500px" height="285" />
 </p>
 
 <h1 align="center">Hi, I'm AoiNeji</h1>
