@@ -1,35 +1,32 @@
 <p align="center">
-  <img src="assets/AoiNeji.gif" alt="Anime Banner" width="500px" height="285" />
+  <img src="assets/meo.gif" alt="Anime Banner" width="500px" height="285" />
 </p>
 
 <h1 align="center">Hi, I'm AoiNeji</h1>
 
 <p align="center">
-  Web Developer • AI/ML Engineer
+  Web Developer • AI Engineer
   <br/>
   <a href="truongquocanh15@gmail.com">truongquocanh15@gmail.com</a> ·
-  <a href="https://github.com/quocanh0810">GitHub</a>
+  <a href="https://www.facebook.com/quocanh.truong.752">Facebook</a>
 </p>
 
 ---
 
 ## 👨‍💻 About Me
-- I build **Web + AI** products, from prototype → production.  
-- Strong in **Python**, **FastAPI**, **Next.js**
-- Love clean architecture, reproducible setups, automation.  
+- I build **Web + AI** products end-to-end
+- **Python/FastAPI** backend × **Next.js** frontend
+- Clean arch + automation lover
 
 ---
 
 ## 🧰 Core Tech
 
-### 🐍 Python & AI/ML
+### 🐍 Python & AI
 <p>
   <img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white" />
 </p>
 
 ### 🎨 Frontend
