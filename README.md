@@ -51,7 +51,7 @@
 
 ## 🚀 Featured Projects
 
-### 1) Weekly Schedule Chatbot – RAG + Next.js + FastAPI
+### 1) Weekly Schedule Chatbot – RAG + FastAPI
 - Natural language weekly scheduling assistant  
 - RAG pipeline (embedding → retrieval → answer)  
 - CRON jobs, FAISS/SQLite storage, streaming UI  
