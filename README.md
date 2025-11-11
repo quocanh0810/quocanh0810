@@ -62,7 +62,7 @@
 
 ### 3) GraOmicSLP (Research – Synthetic Lethality)
 - Multi-graph GNN + embeddings  
-- AUC/AUPR metrics · explainability hooks  
+- AUC/AUPR metrics
 - Cell-line specific SL prediction
 
 ---
