@@ -13,13 +13,6 @@
 
 ---
 
-## 👨‍💻 About Me
-- I build **Web + AI** products
-- **Python/FastAPI** backend × **Next.js** frontend
-- Clean arch + automation lover
-
----
-
 ## 🧰 Core Tech
 
 ### 🐍 Python & AI
