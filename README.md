@@ -14,7 +14,7 @@
 ---
 
 ## 👨‍💻 About Me
-- I build **Web + AI** products end-to-end
+- I build **Web + AI** products
 - **Python/FastAPI** backend × **Next.js** frontend
 - Clean arch + automation lover
 
