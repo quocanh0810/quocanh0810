@@ -48,21 +48,3 @@
 </p>
 
 ---
-
-## 🚀 Featured Projects
-
-### 1) Weekly Schedule Chatbot – RAG + FastAPI
-- Natural language weekly scheduling assistant  
-- RAG pipeline (embedding → retrieval → answer)  
-- CRON jobs, FAISS/SQLite storage, streaming UI  
-
-### 2) AI News Aggregator – Auto ETL → Summaries → Publish
-- Crawl → summarize → translate → auto-post AI news  
-- Python ETL + FastAPI + multilingual pipeline  
-
-### 3) GraOmicSLP (Research – Synthetic Lethality)
-- Multi-graph GNN + embeddings  
-- AUC/AUPR metrics
-- Cell-line specific SL prediction
-
----
