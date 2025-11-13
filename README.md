@@ -5,7 +5,7 @@
 <h1 align="center">Hi, I'm AoiNeji</h1>
 
 <p align="center">
-  Web Developer • AI Engineer
+  Web Developer • Researcher
   <br/>
   <a href="truongquocanh15@gmail.com">truongquocanh15@gmail.com</a> ·
   <a href="https://www.facebook.com/quocanh.truong.752">Facebook</a>
