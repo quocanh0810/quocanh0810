@@ -11,9 +11,4 @@
   <a href="https://github.com/quocanh0810">GitHub</a>
 </p>
 
----
-
-## 👨‍💻 About Me
-- I build **Web + AI** products, from prototype → production.  
-- Strong in **Python**, **FastAPI**, **Next.js**. 
-- Love clean architecture, reproducible setups, automation.  
+--
