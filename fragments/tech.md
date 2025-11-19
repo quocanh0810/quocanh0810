@@ -5,9 +5,6 @@
   <img src="https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white" />
 </p>
 
 ### 🎨 Frontend
@@ -29,19 +26,3 @@
 </p>
 
 ---
-
-## 🚀 Featured Projects
-
-### 1) Weekly Schedule Chatbot – RAG + Next.js + FastAPI
-- Natural language weekly scheduling assistant  
-- RAG pipeline (embedding → retrieval → answer)  
-- CRON jobs, FAISS/SQLite storage, streaming UI  
-
-### 2) AI News Aggregator – Auto ETL → Summaries → Publish
-- Crawl → summarize → translate → auto-post AI news  
-- Python ETL + FastAPI + multilingual pipeline  
-
-### 3) GraOmicSLP (Research – Synthetic Lethality)
-- Multi-graph GNN + embeddings  
-- AUC/AUPR metrics · explainability hooks  
-- Cell-line specific SL prediction
