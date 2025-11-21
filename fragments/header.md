@@ -5,9 +5,9 @@
 <h1 align="center">Hi, I'm AoiNeji</h1>
 
 <p align="center">
-  Web Developer • AI/ML Engineer
+  Web Developer
   <br/>
-  <a href="truongquocanh15@gmail.com">your.email@example.com</a> ·
+  <a href="truongquocanh15@gmail.com">truongquocanh15@gmail.com</a> ·
   <a href="https://github.com/quocanh0810">GitHub</a>
 </p>
 
